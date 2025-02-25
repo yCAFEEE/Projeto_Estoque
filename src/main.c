@@ -1,12 +1,16 @@
 #include "include.h"
 #include "registrar.h"
 #include "dados.h"
+#include "ordena.h"
 #include "saida.h"
+
 
 int main(){
     int input;
     int n;
     produto *prod;
+
+    // Exibe menu principal
     do{
         printf("1 - Registrar e criar relatório\n");
         printf("2 - Modificar relatório pronto\n");
@@ -27,13 +31,54 @@ int main(){
         else if(input == 2){
             int sub_input;
             FILE *arqEntrada = fopen("log.txt", "r");
+            if(arqEntrada == NULL){
+                printf("Erro ao abrir o arquivo log.txt\n");
+                continue;
+            }
+            n = 0;
+            char aux[100];
+            while(fgets(aux, sizeof(aux), arqEntrada) != NULL){
+                n++;
+            }
+            prod = malloc(sizeof(produto) * n);
+
+            // Exibe menu modificar
             do{
-            printf("1 - Imprimir relatório\n");
-            printf("2 - Modificar nome do produto\n");
-            printf("3 - Modificar quantidade do produto\n");
-            printf("4 - Voltar\n");
-            scanf("%d", &sub_input);
-            
+                printf("1 - Modificar nome do produto\n");
+                printf("2 - Modificar quantidade do produto\n");
+                printf("3 - Voltar\n");
+                scanf("%d", &sub_input);
+                
+                if(sub_input == 1){
+                    modifica_nome(arqEntrada, prod);
+                }
+                else if(sub_input == 2){
+                    modifica_quantidade(arqEntrada, prod);
+                }
+            }while(sub_input != 3);
+            fclose(arqEntrada);
+            free(prod);
+        }
+        else if(input == 3){
+            int sub_input;
+
+            // Exibe menu de ordenação
+            do{
+                printf("1 - Ordena por ordem alfabética\n");
+                printf("2 - Ordena as quantidades por ordem crescente\n");
+                printf("3 - Ordena as quantidades por ordem decrescente\n");
+                printf("4 - Voltar\n");
+                scanf("%d", &sub_input);
+
+                if(sub_input == 1){
+
+                }
+                else if(sub_input == 2){
+
+                }
+                else if(sub_input == 3){
+
+                }
             }while(sub_input != 4);
         }
     }while(input != 4);

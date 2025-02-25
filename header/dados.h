@@ -3,7 +3,7 @@
 
 typedef struct {
     char nome[42];
-    int quantidade[100];
+    int quantidade;
 } produto;
 
 #endif

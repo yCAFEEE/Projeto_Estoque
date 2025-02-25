@@ -6,6 +6,8 @@
 
 void le_int(int *n);
 void le_produto(produto *prod, int n);
-void le_relatorio(FILE *arqEntrada, produto *prod, int n);
+void formata_quantidades();
+void modifica_nome(FILE *arqEntrada, produto *prod);
+void modifica_quantidade(FILE *arqEntrada, produto *prod);
 
 #endif

@@ -2,6 +2,7 @@
 #define SAIDA_H
 
 #include "include.h"
+#include "registrar.h"
 #include "dados.h"
 
 void imprime_arq(FILE *arqSaida, produto *prod, int n);
