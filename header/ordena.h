@@ -4,8 +4,8 @@
 #include "include.h"
 #include "dados.h"
 
-void ordena_alfabetico(FILE *arqEntrada, produto *prod);
-void ordena_crescente(FILE *arqEntrada, produto *prod);
-void ordena_decrescente(FILE *arqEntrada, produto *prod);
+void ordena_alfabetico(produto *prod, int n);
+void ordena_crescente(produto *prod, int n);
+void ordena_decrescente(produto *prod, int n);
 
 #endif

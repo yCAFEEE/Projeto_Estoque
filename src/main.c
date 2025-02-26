@@ -2,6 +2,7 @@
 #include "registrar.h"
 #include "dados.h"
 #include "ordena.h"
+#include "para_var.h"
 #include "saida.h"
 
 
@@ -61,6 +62,18 @@ int main(){
         }
         else if(input == 3){
             int sub_input;
+            FILE *arqEntrada = fopen("log.txt", "r");
+            if(arqEntrada == NULL){
+                printf("Erro ao abrir o arquivo log.txt\n");
+                continue;
+            }
+            n = 0;
+            char aux[100];
+            while(fgets(aux, sizeof(aux), arqEntrada) != NULL){
+                n++;
+            }
+            rewind(arqEntrada);
+            prod = malloc(sizeof(produto) * n);
 
             // Exibe menu de ordenação
             do{
@@ -71,15 +84,30 @@ int main(){
                 scanf("%d", &sub_input);
 
                 if(sub_input == 1){
-
+                    arq_para_var(arqEntrada, prod);
+                    ordena_alfabetico(prod, n);
+                    FILE *arqSaida = fopen("log.txt", "w");
+                    imprime_arq(arqSaida, prod, n);
+                    fclose(arqSaida);
                 }
                 else if(sub_input == 2){
-
+                    arq_para_var(arqEntrada, prod);
+                    ordena_crescente(prod, n);
+                    FILE *arqSaida = fopen("log.txt", "w");
+                    imprime_arq(arqSaida, prod, n);
+                    fclose(arqSaida);
                 }
                 else if(sub_input == 3){
-
+                    arq_para_var(arqEntrada, prod);
+                    ordena_decrescente(prod, n);
+                    FILE *arqSaida = fopen("log.txt", "w");
+                    imprime_arq(arqSaida, prod, n);
+                    fclose(arqSaida);
                 }
             }while(sub_input != 4);
+            fclose(arqEntrada);
+            free(prod);
+            prod = NULL;
         }
     }while(input != 4);
 }

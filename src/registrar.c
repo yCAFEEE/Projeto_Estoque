@@ -52,7 +52,6 @@ void modifica_nome(FILE *arqEntrada, produto *prod){
     }
     fclose(arqEntrada);
 
-    //formata_quantidades();
     // Exibe menu com os produtos
     printf("\n--Produtos--\n\n");
     for(int i = 0; i < cont; i++){
