@@ -1,5 +1,5 @@
 # 📦 Projeto Estoque
-* `Sobre o projeto`: A ideia deste projeto é a de fazer um programa que permitisse criar, modificar e ordernar um relatório de estoque, também tendo em mente que fosse fácil e intuitivo para um usuário utilizar-lo.
+* `Sobre o projeto`: A ideia deste projeto é a de fazer um programa que permitisse criar, modificar e ordenar um relatório de estoque, também tendo em mente que fosse fácil e intuitivo para um usuário utilizá-lo.
 
 * `Nota pessoal`: Este simples projeto tem apenas o intuito didático de relembrar assuntos de matérias que vi durante o 1º e 2º semestre de minha graduação. No momento possui apenas algumas funcionalidades simples que poderiam ser facilmente feitas "à mão" por um usuário, porém ainda há espaço para adicionar funções mais complexas, mas isso fica para um outro momento.
 
